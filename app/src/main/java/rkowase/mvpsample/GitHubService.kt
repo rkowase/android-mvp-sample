@@ -3,6 +3,7 @@ package rkowase.mvpsample
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
+import rkowase.mvpsample.data.entity.RepoEntity
 
 interface GitHubService {
     @GET("users/{user}/repos")

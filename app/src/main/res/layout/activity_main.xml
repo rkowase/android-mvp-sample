@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rkowase.mvpsample.MainActivity">
+    tools:context="rkowase.mvpsample.view.MainActivity">
 
     <Button
         android:id="@+id/button"
@@ -19,6 +19,7 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
 </android.support.constraint.ConstraintLayout>
