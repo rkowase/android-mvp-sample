@@ -1,28 +1,25 @@
 package rkowase.mvpsample.view
 
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import rkowase.mvpsample.GitHubService
 import rkowase.mvpsample.data.repository.GitHubRepository
+import rkowase.mvpsample.scheduler.BaseSchedulerProvider
 
 class GitHubPresenter(
         private val mRepository: GitHubRepository,
-        private val mView: GitHubContract.View) : GitHubContract.Presenter {
-
-    private lateinit var mService: GitHubService
+        private val mView: GitHubContract.View,
+        private val mSchedulerProvider: BaseSchedulerProvider) : GitHubContract.Presenter {
 
     init {
         mView.presenter = this
     }
 
     override fun start() {
-        mService = mRepository.createService()
+        mRepository.initService()
     }
 
-    override fun request() {
-        mService.listRepos(mView.getUser())
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
+    override fun request(user: String) {
+        mRepository.request(user)
+                .subscribeOn(mSchedulerProvider.io())
+                .observeOn(mSchedulerProvider.ui())
                 .subscribe({
                     mView.hideButton()
                     mView.showList(it)

@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import rkowase.mvpsample.R
 import rkowase.mvpsample.data.entity.RepoEntity
 import rkowase.mvpsample.data.repository.GitHubRepositoryImpl
+import rkowase.mvpsample.scheduler.SchedulerProvider
 
 
 class MainActivity : AppCompatActivity(), GitHubContract.View {
@@ -19,11 +20,11 @@ class MainActivity : AppCompatActivity(), GitHubContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        presenter = GitHubPresenter(GitHubRepositoryImpl(this), this)
+        presenter = GitHubPresenter(GitHubRepositoryImpl(this), this, SchedulerProvider)
         presenter.start()
 
         button.setOnClickListener({
-            presenter.request()
+            presenter.request(getString(R.string.user))
         })
     }
 
@@ -42,6 +43,4 @@ class MainActivity : AppCompatActivity(), GitHubContract.View {
         listView.adapter = adapter
         listView.visibility = View.VISIBLE
     }
-
-    override fun getUser(): String = getString(R.string.user)
 }
