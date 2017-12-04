@@ -1,7 +1,9 @@
 package rkowase.mvpsample.data.repository
 
-import rkowase.mvpsample.GitHubService
+import io.reactivex.Observable
+import rkowase.mvpsample.data.entity.RepoEntity
 
 interface GitHubRepository {
-    fun createService(): GitHubService
+    fun initService()
+    fun request(user: String): Observable<List<RepoEntity>>
 }
