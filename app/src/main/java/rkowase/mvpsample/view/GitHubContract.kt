@@ -7,10 +7,9 @@ class GitHubContract {
         fun showList(list: List<RepoEntity>)
         fun showError()
         fun hideButton()
-        fun getUser(): String
     }
 
     interface Presenter: BasePresenter {
-        fun request()
+        fun request(user: String)
     }
 }
