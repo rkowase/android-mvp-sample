@@ -9,12 +9,12 @@ import rkowase.mvpsample.R
 import rkowase.mvpsample.data.entity.RepoEntity
 import rkowase.mvpsample.service.GitHubService
 
-class GitHubRepositoryImpl(private val context: Context): GitHubRepository {
+class GitHubRepositoryImpl(private val mContext: Context): GitHubRepository {
     private lateinit var mService: GitHubService
 
     override fun initService() {
         val retrofit = Retrofit.Builder()
-                .baseUrl(context.getString(R.string.base_url))
+                .baseUrl(mContext.getString(R.string.base_url))
                 .addConverterFactory(MoshiConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
