@@ -1,4 +1,4 @@
-package rkowase.mvpsample.view
+package rkowase.mvpsample.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
