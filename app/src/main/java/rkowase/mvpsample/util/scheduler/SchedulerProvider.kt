@@ -1,4 +1,4 @@
-package rkowase.mvpsample.scheduler
+package rkowase.mvpsample.util.scheduler
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

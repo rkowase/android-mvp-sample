@@ -1,4 +1,4 @@
-package rkowase.mvpsample.view
+package rkowase.mvpsample.presentation
 
 import io.reactivex.Observable
 import org.junit.Before
@@ -9,8 +9,8 @@ import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 import rkowase.mvpsample.data.entity.RepoEntity
 import rkowase.mvpsample.data.repository.GitHubRepository
-import rkowase.mvpsample.scheduler.BaseSchedulerProvider
-import rkowase.mvpsample.scheduler.ImmediateSchedulerProvider
+import rkowase.mvpsample.util.scheduler.BaseSchedulerProvider
+import rkowase.mvpsample.util.scheduler.ImmediateSchedulerProvider
 
 class GitHubPresenterTest {
     @Mock private lateinit var mRepository: GitHubRepository

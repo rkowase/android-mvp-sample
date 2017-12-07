@@ -1,6 +1,7 @@
-package rkowase.mvpsample.view
+package rkowase.mvpsample.presentation
 
 import rkowase.mvpsample.data.entity.RepoEntity
+import rkowase.mvpsample.view.BaseView
 
 class GitHubContract {
     interface View: BaseView<Presenter> {

@@ -9,7 +9,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import rkowase.mvpsample.R
 import rkowase.mvpsample.data.entity.RepoEntity
 import rkowase.mvpsample.data.repository.GitHubRepositoryImpl
-import rkowase.mvpsample.scheduler.SchedulerProvider
+import rkowase.mvpsample.presentation.GitHubContract
+import rkowase.mvpsample.presentation.GitHubPresenter
+import rkowase.mvpsample.util.scheduler.SchedulerProvider
 
 
 class MainActivity : AppCompatActivity(), GitHubContract.View {

@@ -1,4 +1,4 @@
-package rkowase.mvpsample.view
+package rkowase.mvpsample.presentation
 
 interface BasePresenter {
     fun start()

@@ -7,7 +7,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import rkowase.mvpsample.R
 import rkowase.mvpsample.data.entity.RepoEntity
-import rkowase.mvpsample.service.GitHubService
+import rkowase.mvpsample.data.service.GitHubService
 
 class GitHubRepositoryImpl(private val mContext: Context): GitHubRepository {
     private lateinit var mService: GitHubService

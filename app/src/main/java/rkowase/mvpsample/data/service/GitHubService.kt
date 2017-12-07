@@ -1,4 +1,4 @@
-package rkowase.mvpsample.service
+package rkowase.mvpsample.data.service
 
 import io.reactivex.Observable
 import retrofit2.http.GET

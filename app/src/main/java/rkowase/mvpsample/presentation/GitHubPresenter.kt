@@ -1,7 +1,7 @@
-package rkowase.mvpsample.view
+package rkowase.mvpsample.presentation
 
 import rkowase.mvpsample.data.repository.GitHubRepository
-import rkowase.mvpsample.scheduler.BaseSchedulerProvider
+import rkowase.mvpsample.util.scheduler.BaseSchedulerProvider
 
 class GitHubPresenter(
         private val mRepository: GitHubRepository,
