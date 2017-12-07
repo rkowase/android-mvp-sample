@@ -21,6 +21,11 @@ class GitHubPresenter(
                 .subscribeOn(mSchedulerProvider.io())
                 .observeOn(mSchedulerProvider.ui())
                 .subscribe({
+                    if (it.isEmpty()) {
+                        mView.showError()
+                        return@subscribe
+                    }
+
                     mView.hideButton()
                     mView.showList(it)
                 }, {
