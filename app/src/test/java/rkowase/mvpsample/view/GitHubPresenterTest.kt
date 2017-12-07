@@ -7,6 +7,7 @@ import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
+import rkowase.mvpsample.data.entity.RepoEntity
 import rkowase.mvpsample.data.repository.GitHubRepository
 import rkowase.mvpsample.scheduler.BaseSchedulerProvider
 import rkowase.mvpsample.scheduler.ImmediateSchedulerProvider
@@ -43,10 +44,18 @@ class GitHubPresenterTest {
     }
 
     @Test
-    fun requestSuccess() {
+    fun requestEmpty() {
         `when`(request()).thenReturn(Observable.just(listOf()))
         mPresenter.request(USER)
-        verify(mView).showList(listOf())
+        verify(mView).showError()
+    }
+
+    @Test
+    fun requestSuccess() {
+        val list = listOf(RepoEntity("name"))
+        `when`(request()).thenReturn(Observable.just(list))
+        mPresenter.request(USER)
+        verify(mView).showList(list)
         verify(mView).hideButton()
     }
 
